@@ -4,7 +4,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  gap: 24px;
 }
 
 .cards > ul > li {
@@ -30,7 +30,7 @@
 .cards ul li {
   list-style: none;
   border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0 0 0 / 15%);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
   background-color: var(--background-color);
   margin: 16px;
   position: relative;
@@ -148,7 +148,7 @@
   margin: 0;
   background: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0 0 0 / 12%);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 12%);
 }
 
 .home .cards-card-image {
@@ -186,6 +186,7 @@
     max-height: 360px;
   }
 }
+
 .card-tiles h2 {
   margin-top: 0;
   padding-top: 20px;
@@ -203,7 +204,7 @@
   margin: 16px 0;
   background: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0 0 0 / 12%);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 12%);
   padding-top: 30px;
   overflow: hidden;
 }
