@@ -1,22 +1,17 @@
 export default function decorate(block) {
-  // grab image src from existing picture
   const img = block.querySelector('picture img');
   const bgSrc = img ? img.getAttribute('src') : '';
 
-  // create new wrapper
   const rewardContent = document.createElement('div');
   rewardContent.className = 'reward-content';
 
-  // set background image
   if (bgSrc) {
     rewardContent.style.backgroundImage = `url('${bgSrc}')`;
   }
 
-  // left side
   const rewardLeft = document.createElement('div');
   rewardLeft.className = 'reward-left';
 
-  // headline (empty h4 with attributes)
   const h4 = document.createElement('h4');
   h4.className = 'headline';
 
