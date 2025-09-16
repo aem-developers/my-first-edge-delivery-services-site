@@ -38,3 +38,7 @@
 .hero-text strong {
   color: var(--frescopa-color-tertiary);
 }
+
+.hero-banner.full {
+  max-width: unset;
+}
