@@ -40,7 +40,7 @@ export default function decorate(block) {
   // Simulate poor CLS with placeholder → then swap with raw image with different size
   const clsPlaceholder = document.createElement('div');
   clsPlaceholder.style.width = '1240px';
-  clsPlaceholder.style.height = '827px';
+  clsPlaceholder.style.height = '600px';
   clsPlaceholder.style.background = '#eee';
   clsPlaceholder.textContent = 'Loading image…';
   section.prepend(clsPlaceholder);
