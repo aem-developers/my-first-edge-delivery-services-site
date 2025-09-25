@@ -116,7 +116,9 @@ async function loadPage() {
 loadPage();
 
 // Simulate poor TBT
-const start = performance.now();
-while (performance.now() - start < 300) {
-  // Blocking the main thread for 300ms
-}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const start = performance.now();
+    while (performance.now() - start < 1000) {}
+  }, 1000);
+});
