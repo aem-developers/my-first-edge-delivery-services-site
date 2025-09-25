@@ -67,12 +67,12 @@ async function loadEager(doc) {
     document.body.classList.add('appear');
 
     // Simulate poor TBT
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const start = performance.now();
-        while (performance.now() - start < 1000) {}
-      }, 1000);
-    });
+    // window.addEventListener('load', () => {
+    //   setTimeout(() => {
+    //     const start = performance.now();
+    //     while (performance.now() - start < 1000) {}
+    //   }, 1000);
+    // });
 
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
