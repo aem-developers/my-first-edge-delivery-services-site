@@ -13,14 +13,6 @@ export default function decorate(block) {
 
   // clear the block html, we're going to rebuild it
   block.innerHTML = '';
-  if (picture) {
-    const img = picture.querySelector('img');
-    block.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
-  }
-  if (textContainer) {
-    textContainer.classList.add('hero-text');
-    block.append(textContainer);
-  }
 
   // Simulate poor LCP
   const rawImage = document.createElement('img');
@@ -31,4 +23,12 @@ export default function decorate(block) {
   rawImage.height = 1066;
 
   block.append(rawImage);
+  if (picture) {
+    const img = picture.querySelector('img');
+    block.append(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
+  }
+  if (textContainer) {
+    textContainer.classList.add('hero-text');
+    block.append(textContainer);
+  }
 }
