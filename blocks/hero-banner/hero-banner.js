@@ -23,7 +23,7 @@ export default function decorate(block) {
   rawImage.style.height = rawImage.naturalHeight + 'px';
   rawImage.style.maxWidth = 'none';
   rawImage.style.display = 'block';
-  section.append(rawImage);
+  section.prepend(rawImage);
 
   if (picture) {
     const img = picture.querySelector('img');
