@@ -19,11 +19,13 @@ export default function decorate(block) {
   const rawImage = document.createElement('img');
   rawImage.src = 'https://main--my-first-edge-delivery-services-site--aem-developers.aem.page/module-4/images/media_1db2e63a4c1003f5ac8733049f06a980689d901b4.jpg';
   rawImage.alt = 'Unoptimized LCP test image';
-  rawImage.style.width = rawImage.naturalWidth + 'px';
-  rawImage.style.height = rawImage.naturalHeight + 'px';
+  rawImage.style.width = '5957px';
+  rawImage.style.height = '3971px';
   rawImage.style.maxWidth = 'none';
   rawImage.style.display = 'block';
-  section.prepend(rawImage);
+  setTimeout(() => {
+    section.prepend(rawImage);
+  }, 3000);
 
   if (picture) {
     const img = picture.querySelector('img');
