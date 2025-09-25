@@ -17,25 +17,25 @@ export default function decorate(block) {
   const section = block.closest('.section');
 
   // Simulate poor LCP with placeholder → then swap with raw image
-  // const lcpPlaceholder = document.createElement('div');
-  // lcpPlaceholder.style.width = '5957px';
-  // lcpPlaceholder.style.height = '3971px';
-  // lcpPlaceholder.style.maxWidth = 'none';
-  // lcpPlaceholder.style.background = '#eee';
-  // lcpPlaceholder.textContent = 'Loading huge image…';
-  // section.prepend(lcpPlaceholder);
+  const lcpPlaceholder = document.createElement('div');
+  lcpPlaceholder.style.width = '5957px';
+  lcpPlaceholder.style.height = '3971px';
+  lcpPlaceholder.style.maxWidth = 'none';
+  lcpPlaceholder.style.background = '#eee';
+  lcpPlaceholder.textContent = 'Loading huge image…';
+  section.prepend(lcpPlaceholder);
 
-  // setTimeout(() => {
-  //   const rawImage = document.createElement('img');
-  //   rawImage.src = 'https://main--my-first-edge-delivery-services-site--aem-developers.aem.page/module-4/images/media_1db2e63a4c1003f5ac8733049f06a980689d901b4.jpg?t=' + Date.now();
-  //   rawImage.alt = 'Unoptimized LCP test image';
-  //   rawImage.style.width = '5957px';
-  //   rawImage.style.height = '3971px';
-  //   rawImage.style.maxWidth = 'none';
-  //   rawImage.style.display = 'block';
+  setTimeout(() => {
+    const rawImage = document.createElement('img');
+    rawImage.src = 'https://main--my-first-edge-delivery-services-site--aem-developers.aem.page/module-4/images/media_1db2e63a4c1003f5ac8733049f06a980689d901b4.jpg?t=' + Date.now();
+    rawImage.alt = 'Unoptimized LCP test image';
+    rawImage.style.width = '5957px';
+    rawImage.style.height = '3971px';
+    rawImage.style.maxWidth = 'none';
+    rawImage.style.display = 'block';
 
-  //   lcpPlaceholder.replaceWith(rawImage);
-  // }, 1500);
+    lcpPlaceholder.replaceWith(rawImage);
+  }, 1500);
 
   // Simulate poor CLS with placeholder → then swap with raw image with different size
   const clsPlaceholder = document.createElement('div');
