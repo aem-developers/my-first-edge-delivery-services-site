@@ -18,9 +18,6 @@ export default function decorate(block) {
   const rawImage = document.createElement('img');
   rawImage.src = 'https://main--my-first-edge-delivery-services-site--aem-developers.aem.page/module-4/images/media_1db2e63a4c1003f5ac8733049f06a980689d901b4.jpg';
   rawImage.alt = 'Unoptimized LCP test image';
-  rawImage.loading = 'lazy';
-  rawImage.width = 1600;
-  rawImage.height = 1066;
 
   block.append(rawImage);
   if (picture) {
