@@ -16,13 +16,15 @@ export default function decorate(block) {
 
         const placeholder = document.createElement('div');
         placeholder.style.width = '100%';
-        placeholder.style.paddingTop = `${(img.naturalHeight / img.naturalWidth) * 100}%`;
+        placeholder.style.height = 'auto';
+        placeholder.style.aspectRatio = '4 / 3';
         placeholder.style.backgroundColor = '#eee';
-        placeholder.textContent = 'Loading image…';
         div.replaceChild(placeholder, picture);
 
         const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-        placeholder.replaceWith(optimized);
+        setTimeout(() => {
+          placeholder.replaceWith(optimized);
+        }, 3000);
       } else {
         div.className = 'cards-card-body';
       }
