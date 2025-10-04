@@ -1,5 +1,7 @@
 import { buildBlock, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForFirstImage, loadSection, loadSections, loadCSS } from './aem.js';
 
+import gtmMartech from './gtm-martech.js';
+
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
@@ -66,6 +68,8 @@ async function loadEager(doc) {
     decorateMain(main);
     document.body.classList.add('appear');
 
+    await Promise.all([gtmMartech.eager(), loadSection(main.querySelector('.section'), waitForFirstImage)]);
+
     // Simulate poor TBT
     window.addEventListener('load', () => {
       setTimeout(() => {
@@ -94,6 +98,7 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
+  await gtmMartech.lazy();
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -112,6 +117,7 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
+  window.setTimeout(gtmMartech.delayed, 1000);
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
 }
