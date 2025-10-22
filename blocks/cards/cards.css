@@ -1,3 +1,7 @@
+.cards {
+  padding-bottom: 50px;
+}
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -277,4 +281,38 @@ main > .section + .background .cards ul li img {
     width: 380px;
     min-height: 410px;
   }
+}
+
+button {
+  display: inline-block;
+  background-color: #7a3b2e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+}
+
+button:hover {
+  background-color: #5e2e24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 20%);
+}
+
+button:active {
+  background-color: #4a241b;
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
 }
